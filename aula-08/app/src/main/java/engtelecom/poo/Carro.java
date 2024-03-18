@@ -11,6 +11,10 @@ public class Carro {
         if(v >=0 && v <= VELOCIDADE_MAX) this.velocidadeAtual = v;
     }
 
+    public Carro(int v){
+        this(200, v);
+    }
+
     public double getVelocidade() {
         return velocidadeAtual;
     }
@@ -28,7 +32,7 @@ public class Carro {
     }
 
     public void frear(int f){
-        if(velocidadeAtual - f <= VELOCIDADE_MIN){
+        if(velocidadeAtual - f >= VELOCIDADE_MIN){
             velocidadeAtual -= f;
         } else{
             velocidadeAtual = VELOCIDADE_MIN;

@@ -14,10 +14,17 @@ public class App {
 //
 //        pencil.setNivelTinta(101);
 //        System.out.println(pencil.getNivelTinta());
-        Carro renegado = new Carro(20);
+        Carro renegado = new Carro(200, 20);
 
         System.out.println(renegado.getVelocidade());
         renegado.acelerar(200);
+        System.out.println(renegado.getVelocidade());
+        renegado.acelerar(20);
+        System.out.println(renegado.getVelocidade());
+        for (int i = 0; i < 4; i++) {
+            renegado.frear(50);
+            System.out.println(renegado.getVelocidade());
+        }
         System.out.println(renegado.getVelocidade());
 
     }
