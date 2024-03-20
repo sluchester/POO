@@ -2,11 +2,13 @@ package engtelecom.poo;
 
 public class Carro {
     private double velocidadeAtual;
+    //declaring the final constant to be set later
     private final double VELOCIDADE_MAX;
     private final double VELOCIDADE_MIN = 0;
 
     public Carro(double vMax, int v){
         this.velocidadeAtual = 0;
+        //setting the
         this.VELOCIDADE_MAX = vMax;
         if(v >=0 && v <= VELOCIDADE_MAX) this.velocidadeAtual = v;
     }

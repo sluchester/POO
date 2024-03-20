@@ -8,7 +8,6 @@ public class Caneta {
     //método construtor
     //só é chamado no instanciamento da classe
     public Caneta(int n, String c){
-        this.nivelTinta = 100;
         this.setNivelTinta(n);
         cor = c;
         aberta = false;
@@ -57,6 +56,8 @@ public class Caneta {
     public void setNivelTinta(int n){
         if(n>=0 && n<=100) {
             this.nivelTinta = n;
+        } else {
+            this.nivelTinta = 100;
         }
     }
 }
