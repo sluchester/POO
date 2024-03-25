@@ -7,13 +7,12 @@ public class Horario {
 
     private final long HORA_SEGUNDOS = 3600;
     private final long MIN_SEGUNDOS = 60;
-    private final int NEGATIVO = -1;
     private final int ZERO = 0;
 
     public Horario(int h, int m, int s){
-        if(validaHorario(h)){this.hora = h;} else { this.hora = 0;}
-        if(validaHorario(m)){this.hora = m;} else { this.minuto = 0;}
-        if(validaHorario(s)){this.hora = s;} else { this.segundo = 0;}
+        if(validaHora(h)){this.hora = h;} else { this.hora = 0;}
+        if(validaMinSeg(m)){this.hora = m;} else { this.minuto = 0;}
+        if(validaMinSeg(s)){this.hora = s;} else { this.segundo = 0;}
     }
 
     public Horario(int h, int m){
@@ -28,13 +27,20 @@ public class Horario {
         this(0,0,0);
     }
 
-    //TODO retornar da maneira correta - como fazer retornar daquele modo de 00:00:00
     @Override
     public String toString() {
-        return hora + ":" + minuto + ":" + segundo;
+        return String.format("%02d:%02d:%02d)" + hora, minuto, segundo);
     }
 
-    private boolean validaHorario(int n){
+    private boolean validaHora(int n){
+        if(n>= 0 && n<24){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean validaMinSeg(int n){
         if(n>= 0 && n<60){
             return true;
         } else {
@@ -66,19 +72,31 @@ public class Horario {
         this.segundo = segundo;
     }
 
-    //TODO validar e finalizar a logica
-    public String porExtenso(Horario hora){
+    public String porExtenso(){
         String[] horaExtenso = {"zero", "uma", "duas", "tres","quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
                 "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove",
-                "vinte", "vinte e uma", "vinte e duas", "vinte e três", "vinte e quatro"};
+                "vinte", "vinte e uma", "vinte e duas", "vinte e três"};
 
         String[] minutoExtenso = {"zero", "um", "dois", "tres","quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
                 "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove",
-                "vinte", "trinta", "quarenta", "cinquenta"};
+                "vinte", "trinta", "quarenta", "cinquenta"}; //23
 
+        String horaEscrita = horaExtenso[hora];
 
+        int dezenaMin = minuto/10;
+        int unidadeMin = minuto%10;
 
-        return"bad";
+        String dezenaEscrita;
+        String unidadeEscrita;
+
+        if(dezenaMin > 1){
+            dezenaEscrita = minutoExtenso[dezenaMin+18];
+            unidadeEscrita = minutoExtenso[unidadeMin];
+        } else{
+            dezenaEscrita = minutoExtenso[minuto];
+        }
+
+        return horaEscrita+dezenaEscrita+unidadeEscrita;
     }
 
     public long horarioEmSegundos(){
@@ -88,20 +106,7 @@ public class Horario {
         return (varHora+varMin+segundo);
     }
 
-    private long converteNegativo(long n){
-        return n*NEGATIVO;
-    }
-
     public long diferencaSegundos(Horario obj){
-        long horaToSeg = obj.hora - this.hora;
-        long minToSeg = obj.minuto - this.hora;
-        long segToSeg = obj.segundo - this.segundo;
-
-        if(horaToSeg < ZERO){horaToSeg=converteNegativo(horaToSeg);}
-        if(minToSeg < ZERO){minToSeg=converteNegativo(minToSeg);}
-        if(segToSeg < ZERO){segToSeg=converteNegativo(segToSeg);}
-
-        return ((horaToSeg*HORA_SEGUNDOS)+(minToSeg*MIN_SEGUNDOS)+(segToSeg));
+        return Math.abs(this.horarioEmSegundos() - obj.horarioEmSegundos());
     }
-
 }

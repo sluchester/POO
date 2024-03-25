@@ -5,6 +5,8 @@ package engtelecom.poo;
 
 public class App {
     public static void main(String[] args) {
+        Horario data = new Horario(10);
 
+        data.toString();
     }
 }
