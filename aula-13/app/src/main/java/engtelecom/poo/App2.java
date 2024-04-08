@@ -14,12 +14,17 @@ public class App2 {
         ArrayList<Integer> total= new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
-        int numero = scanner.nextInt();
+        int numero = 0;
 
         while(numero != 999){
-            total.add(numero);
-
+            numero = scanner.nextInt();
+            if(numero == 999){
+                break;
+            } else{
+                total.add(numero);
+            }
         }
+
         System.out.println("numeros lidos");
         total.forEach(System.out::println);
     }
