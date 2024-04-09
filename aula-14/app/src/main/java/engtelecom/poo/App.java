@@ -25,21 +25,44 @@ public class App {
         String d = "20/10/2024";
         data = LocalDate.parse(d,df);*/
 
-        //luno aluno = new Aluno();
+        System.out.println("Digite o nome do aluno");
+        teclado.reset();
+        String nome = teclado.nextLine();
 
-        System.out.println("cadastrando aluno");
+        System.out.println("Digite o CPF");
+        String cpf = teclado.nextLine();
 
-        return true;
+        System.out.println("Digite a data de nascimento (dd/mm/yyyy)");
+        String data = teclado.nextLine();
+
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        LocalDate formattedDate = LocalDate.parse(data,df);
+
+        System.out.println("Digite a matrícula");
+        String matricula = teclado.nextLine();
+
+        Aluno aluno = new Aluno(nome, matricula, cpf, formattedDate);
+
+        if(bancoDeDados.containsKey(matricula)){
+            return false;
+        } else{
+            bancoDeDados.put(matricula,aluno);
+            return true;
+        }
     }
 
     public void atualizar(){
 
-        System.out.println("atualizando aluno");
     }
 
-    public boolean remover(){
-        System.out.println("removido");
-        return true;
+    public boolean remover(String matricula){
+        if(bancoDeDados.containsKey(matricula)){
+            bancoDeDados.remove(matricula);
+            return true;
+        } else{
+            //System.out.println("matricula não encontrada");
+            return false;
+        }
     }
 
     public void listarDadosUmAluno(){
@@ -72,7 +95,10 @@ public class App {
             switch (opcao) {
                 case 1 -> app.cadastrar();
                 case 2 -> app.atualizar();
-                case 3 -> app.remover();
+                case 3 -> {
+                    System.out.println("Forneça a matrícula do aluno");
+                    app.remover(teclado.nextLine());
+                }
                 case 4 -> app.listarDadosUmAluno();
                 case 5 -> app.listarDadosTodosAlunos();
             }

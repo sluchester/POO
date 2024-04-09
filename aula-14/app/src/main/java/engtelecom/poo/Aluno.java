@@ -1,14 +1,15 @@
 package engtelecom.poo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Aluno {
     private String nome;
     private String matricula;
     private String cpf;
-    private Date dataDeNascimento;
+    private LocalDate dataDeNascimento;
 
-    public Aluno(String nome, String matricula, String cpf, Date dataDeNascimento) {
+    public Aluno(String nome, String matricula, String cpf, LocalDate dataDeNascimento) {
         this.nome = nome;
         this.matricula = matricula;
         this.cpf = cpf;
@@ -39,11 +40,11 @@ public class Aluno {
         return cpf;
     }
 
-    public Date getDataDeNascimento() {
+    public LocalDate getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(Date dataDeNascimento) {
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 }
