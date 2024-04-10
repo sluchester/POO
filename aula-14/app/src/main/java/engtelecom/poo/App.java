@@ -26,7 +26,7 @@ public class App {
         data = LocalDate.parse(d,df);*/
 
         System.out.println("Digite o nome do aluno");
-        teclado.reset();
+        //teclado.reset();
         String nome = teclado.nextLine();
 
         System.out.println("Digite o CPF");
@@ -44,6 +44,7 @@ public class App {
         Aluno aluno = new Aluno(nome, matricula, cpf, formattedDate);
 
         if(bancoDeDados.containsKey(matricula)){
+            //System.out.println("Usuário já existe. Experimente atualizar");
             return false;
         } else{
             bancoDeDados.put(matricula,aluno);
@@ -91,11 +92,13 @@ public class App {
 
         do {
             opcao = app.menu();
+            teclado.nextLine();
 
             switch (opcao) {
                 case 1 -> app.cadastrar();
                 case 2 -> app.atualizar();
                 case 3 -> {
+
                     System.out.println("Forneça a matrícula do aluno");
                     app.remover(teclado.nextLine());
                 }
