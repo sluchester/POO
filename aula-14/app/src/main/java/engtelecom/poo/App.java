@@ -40,7 +40,7 @@ public class App {
         System.out.println("Digite a data de nascimento (dd/mm/yyyy)");
         String data = teclado.nextLine();
 
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate formattedDate = LocalDate.parse(data,df);
 
         System.out.println("Digite a matrícula");
@@ -112,13 +112,20 @@ public class App {
         if(validaMatricula(matricula)){
             Aluno aluno = bancoDeDados.get(matricula);
             System.out.println(aluno);
+            //TODO tem que listar todos os dados, aqui ele tá pegando os atributos
         } else {
             System.out.println("Matrícula não encontrada");
         }
     }
 
     public void listarDadosTodosAlunos(){
-        //TODO
+        bancoDeDados.forEach((matricula, aluno) -> {
+            System.out.println("Matrícula: " + matricula);
+            System.out.println("Nome: " + aluno.getNome());
+            System.out.println("CPF: " + aluno.getCpf());
+            System.out.println("Data de nascimento: " + aluno.getDataDeNascimento());
+            System.out.println();
+        });
     }
 
     public int menu(){
