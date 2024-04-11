@@ -52,8 +52,25 @@ public class App {
         }
     }
 
-    public void atualizar(){
+    public int menu2(){
+        System.out.println("1- Nome");
+        System.out.println("2- Matricula");
+        System.out.println("3- CPF");
+        System.out.println("4- Data de Nascimento");
 
+        return teclado.nextInt();
+    }
+
+    public void atualizar(String matricula){
+        int opEscolhida = menu2();
+        teclado.nextLine();
+
+        switch (opEscolhida){
+            case 1 ->{
+                //verificar a posição do dado escolhido dentro da hash map e trocar ele
+                // verificar os metodos containsValue e Replace
+            }
+        }
     }
 
     public boolean remover(String matricula){
@@ -96,9 +113,11 @@ public class App {
 
             switch (opcao) {
                 case 1 -> app.cadastrar();
-                case 2 -> app.atualizar();
+                case 2 -> {
+                    System.out.println("Forneça a matrícula do aluno");
+                    app.atualizar(teclado.nextLine());
+                }
                 case 3 -> {
-
                     System.out.println("Forneça a matrícula do aluno");
                     app.remover(teclado.nextLine());
                 }
