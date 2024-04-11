@@ -16,6 +16,16 @@ public class Aluno {
         this.dataDeNascimento = dataDeNascimento;
     }
 
+    @Override
+    public String toString() {
+        return "Dados do Aluno: { \n" +
+                "Nome= " + nome + "\n" +
+                "Matricula= " + matricula + "\n" +
+                "CPF= " + cpf + "\n" +
+                "Data de Nascimento= " + dataDeNascimento +
+                '}';
+    }
+
     public String getNome() {
         return nome;
     }
