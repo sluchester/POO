@@ -18,6 +18,11 @@ public class App {
         this.bancoDeDados = new HashMap<String,Aluno>();
     }
 
+    private boolean validaMatricula(String matricula){
+        if(bancoDeDados.containsKey(matricula)){return true;}
+        else{return false;}
+    }
+
     public boolean cadastrar(){
         /*LocalDate data = LocalDate.of(2000,10,20);
 
@@ -43,8 +48,8 @@ public class App {
 
         Aluno aluno = new Aluno(nome, matricula, cpf, formattedDate);
 
-        if(bancoDeDados.containsKey(matricula)){
-            //System.out.println("Usuário já existe. Experimente atualizar");
+        if(validaMatricula(matricula)){
+            System.out.println("Usuário já existe. Experimente atualizar");
             return false;
         } else{
             bancoDeDados.put(matricula,aluno);
@@ -65,30 +70,55 @@ public class App {
         int opEscolhida = menu2();
         teclado.nextLine();
 
-        switch (opEscolhida){
-            case 1 ->{
-                //verificar a posição do dado escolhido dentro da hash map e trocar ele
-                // verificar os metodos containsValue e Replace
+        if(validaMatricula(matricula)){
+            Aluno aluno = bancoDeDados.get(matricula);
+            switch (opEscolhida){
+                case 1 ->{
+                    System.out.println("Digite o novo nome");
+                    aluno.setNome(teclado.nextLine());
+                }
+                case 2 -> {
+                    System.out.println("Digite a nova matricula");
+                    aluno.setMatricula(teclado.nextLine());
+                }
+                case 3 -> {
+                    System.out.println("Digite o novo CPF");
+                    aluno.setCpf(teclado.nextLine());
+                }
+                case 4 -> {
+                    System.out.println("Digite a nova data de nascimento (dd/mm/yyyy)");
+                    String data = teclado.nextLine();
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+                    LocalDate formattedDate = LocalDate.parse(data,df);
+                    aluno.setDataDeNascimento(formattedDate);
+                }
             }
+        } else{
+            System.out.println("matrícula não encontrada");
         }
     }
 
     public boolean remover(String matricula){
-        if(bancoDeDados.containsKey(matricula)){
+        if(validaMatricula(matricula)){
             bancoDeDados.remove(matricula);
             return true;
         } else{
-            //System.out.println("matricula não encontrada");
+            System.out.println("matricula não encontrada");
             return false;
         }
     }
 
-    public void listarDadosUmAluno(){
-        System.out.println("listando");
+    public void listarDadosUmAluno(String matricula){
+        if(validaMatricula(matricula)){
+            Aluno aluno = bancoDeDados.get(matricula);
+            System.out.println(aluno);
+        } else {
+            System.out.println("Matrícula não encontrada");
+        }
     }
 
     public void listarDadosTodosAlunos(){
-        System.out.println("listando");
+        //TODO
     }
 
     public int menu(){
@@ -121,7 +151,10 @@ public class App {
                     System.out.println("Forneça a matrícula do aluno");
                     app.remover(teclado.nextLine());
                 }
-                case 4 -> app.listarDadosUmAluno();
+                case 4 -> {
+                    System.out.println("Forneça a matrícula do aluno");
+                    app.listarDadosUmAluno(teclado.nextLine());
+                }
                 case 5 -> app.listarDadosTodosAlunos();
             }
         } while (opcao != 6);
