@@ -6,14 +6,32 @@ package engtelecom.poo;
 import java.util.ArrayList;
 
 public class App {
+    private Motor motor;
     private Carro carro;
-    private ArrayList<Motor> motores = new ArrayList();
+    private ArrayList<Motor> motores;
+
+    public App(){
+        Motor m = new Motor(199, "v1");
+        motores = new ArrayList<>();
+        Carro carro = new Carro("f1", "wolks", "amarela", new Motor(100,"v1"));
+    }
+
+    public void trocarMotor(Motor novo){
+        motores.add(motor);
+        this.carro.setMotor(novo);
+    }
+
+    public void trocarCarro(Carro novo){
+        this.carro = novo;
+    }
 
     public static void main(String[] args) {
-        Motor motorMustang = new Motor(100, 4, 200);
-        Motor motor2 = new Motor(200, 6, 300);
-        Carro mustang = new Carro("mustang","Ford", motor2);
+        App app = new App();
 
-        System.out.println(mustang);
+        app.trocarMotor(new Motor(200, "plus"));
+        app
+        app.trocarCarro(new Carro("fx200", "ferrario", "vermelho", new Motor(200, "ferrazzo")));
+
+        System.out.println();
     }
 }

@@ -2,21 +2,26 @@ package engtelecom.poo;
 
 public class Motor {
     private int hp;
-    private int cilindros;
-    private double vMax;
+    private String marca;
 
-    public Motor(int hp, int cilindros, double vMax) {
+    public Motor(int hp, String marca) {
         this.hp = hp;
-        this.cilindros = cilindros;
-        this.vMax = vMax;
+        this.marca = marca;
     }
 
-    @Override
-    public String toString() {
-        return "Motor{" +
-                "hp=" + hp +
-                ", cilindros=" + cilindros +
-                ", vMax=" + vMax +
-                '}';
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 }
