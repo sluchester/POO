@@ -1,0 +1,1 @@
+dpkg -x StarUML_6.1.0_amd64.deb staruml
