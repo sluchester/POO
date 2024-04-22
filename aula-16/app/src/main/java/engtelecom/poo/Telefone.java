@@ -1,6 +1,7 @@
 package engtelecom.poo;
 
-import java.util.HashMap;
+import javax.swing.text.MaskFormatter;
+import java.text.ParseException;
 
 public class Telefone {
     private String rotulo;
@@ -8,7 +9,30 @@ public class Telefone {
 
     public Telefone(String rotulo, String numero) {
         this.rotulo = rotulo;
-        this.numero = numero;
+        this.numero = formata("(##) #####−####", numero);
+    }
+
+    @Override
+    public String toString() {
+        return "Telefone{" +
+                "rotulo='" + rotulo + '\'' +
+                ", numero='" + numero + '\'' +
+                '}';
+    }
+
+    private String formata(String mascara, String valor){
+        MaskFormatter mask = null;
+        String resultado = "";
+
+        try {
+            mask = new MaskFormatter(mascara);
+            mask.setValueContainsLiteralCharacters(false);
+            mask.setPlaceholderCharacter('_');
+            resultado = mask.valueToString(valor);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 
     public String getRotulo() {
@@ -24,7 +48,7 @@ public class Telefone {
     }
 
     public void setNumero(String numero) {
-        this.numero = numero;
+        this.numero = formata("(##) #####−####", numero);
     }
 
     
