@@ -17,8 +17,15 @@ public class Contato {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public boolean addTelefone(){
-        return true;
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "nome='" + nome + '\'' +
+                ", sobreNome='" + sobreNome + '\'' +
+                ", dataDeNascimento=" + dataDeNascimento +
+                ", dadosDeTelefone=" + dadosDeTelefone +
+                ", dadosDeEmail=" + dadosDeEmail +
+                '}';
     }
 
     public boolean addTelefone(){
@@ -26,6 +33,18 @@ public class Contato {
     }
 
     public boolean addEmail(){
+        return true;
+    }
+
+    public boolean updateTelefone(Telefone telefone){return true;}
+
+    public boolean updateEmail(Telefone telefone){return true;}
+
+    public boolean removeTelefone(){
+        return true;
+    }
+
+    public boolean removeEmail(){
         return true;
     }
 }
