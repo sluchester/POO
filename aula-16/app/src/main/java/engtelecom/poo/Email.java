@@ -6,7 +6,8 @@ public class Email {
 
     public Email(String rotulo, String email) {
         this.rotulo = rotulo;
-        this.email = email;
+        //validaEmail TODO AQUI
+        
     }
 
     @Override
@@ -15,6 +16,16 @@ public class Email {
                 "rotulo='" + rotulo + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    private boolean validaEmail(String email){
+        String eR = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a−z]{2,})$";
+        //String email = "meu.email@dominio.com.br";
+        if (email.matches(eR)){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     public String getRotulo() {
