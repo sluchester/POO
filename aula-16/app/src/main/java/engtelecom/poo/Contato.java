@@ -1,6 +1,7 @@
 package engtelecom.poo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Contato {
@@ -8,9 +9,9 @@ public class Contato {
     private String sobreNome;
     private LocalDate dataDeNascimento;
     //tentar usar a classe telefone para retornar rotulo e valor
-    private HashMap<Telefone,Telefone> dadosDeTelefone;
+    private ArrayList<Telefone> dadosDeTelefone;
     //tentar usar a classe email para retornar rotulo e valor
-    private HashMap<Email,Email> dadosDeEmail;
+    private ArrayList<Email> dadosDeEmail;
 
     public Contato(String nome, LocalDate dataDeNascimento) {
         this.nome = nome;
@@ -28,11 +29,18 @@ public class Contato {
                 '}';
     }
 
-    public boolean addTelefone(){
+    public boolean addTelefone(String rotulo, String numero){
+        dadosDeTelefone.add(new Telefone(rotulo, numero));
         return true;
     }
 
-    public boolean addEmail(){
+    public boolean addEmail(String rotulo, String email){
+        /*if(validaEmail(email)){
+            dadosDeEmail.add(new Email(rotulo, email));
+            return true;
+        } else{
+            return false;
+        }*/
         return true;
     }
 
