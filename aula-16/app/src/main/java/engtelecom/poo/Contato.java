@@ -13,8 +13,9 @@ public class Contato {
     //tentar usar a classe email para retornar rotulo e valor
     private ArrayList<Email> dadosDeEmail;
 
-    public Contato(String nome, LocalDate dataDeNascimento) {
+    public Contato(String nome, String sobreNome, LocalDate dataDeNascimento) {
         this.nome = nome;
+        this.sobreNome = sobreNome;
         this.dataDeNascimento = dataDeNascimento;
     }
 
@@ -44,12 +45,32 @@ public class Contato {
         return true;
     }
 
-    public boolean updateTelefone(Telefone telefone){return true;}
+    //o que update faria? recebe o valor novo ou o velho?
+    // Ela retorna os valores para o suário ver ou só modifica?
+    //e se eu der ou tiver que fazer um telefone.set?
+    // tem que fazer isso aqui ou muda somente a posição na lista
+    public boolean updateTelefone(String rotulo, String numero){
+        if(dadosDeTelefone.contains(new Telefone(rotulo, numero))){
+            addEmail(rotulo,numero);
+            return true;
+        } else{
+            return false;
+        }
+    }
 
-    public boolean updateEmail(Telefone telefone){return true;}
+    public boolean updateEmail(String rotulo, String numero){
+        if (dadosDeEmail.contains(new Email(rotulo,numero))){
+            addEmail(rotulo, numero);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-    public boolean removeTelefone(){
-        return true;
+    //pq ele remove só orotulo
+    // ao elimiar o rotulo, o email ainda fica
+    public boolean removeTelefone(String rotulo){
+
     }
 
     public boolean removeEmail(){
