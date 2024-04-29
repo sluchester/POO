@@ -6,7 +6,7 @@ public class Email {
 
     public Email(String rotulo, String email) {
         this.rotulo = rotulo;
-        //validaEmail TODO AQUI
+        if(validaEmail(email)){ this.email = email;} else{ this.email = email;}
     }
 
     @Override
@@ -42,7 +42,4 @@ public class Email {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    
-    
 }
