@@ -153,7 +153,7 @@ public class App {
                 case 2 -> {
                     System.out.println("Forneça a matrícula do aluno");
                     app.atualizar(teclado.nextLine());
-                }
+                }   
                 case 3 -> {
                     System.out.println("Forneça a matrícula do aluno");
                     app.remover(teclado.nextLine());
