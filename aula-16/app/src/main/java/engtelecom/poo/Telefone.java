@@ -14,10 +14,7 @@ public class Telefone {
 
     @Override
     public String toString() {
-        return "Telefone{" +
-                "rotulo='" + rotulo + '\'' +
-                ", numero='" + numero + '\'' +
-                '}';
+        return "+55 " +  this.numero;
     }
 
     private String formata(String mascara, String valor){
