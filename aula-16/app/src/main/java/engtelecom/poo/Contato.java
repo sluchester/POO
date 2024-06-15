@@ -29,16 +29,19 @@ public class Contato {
     }
 
     public boolean addTelefone(String rotulo, String numero){
-        dadosDeTelefone.add(new Telefone(rotulo, numero));
-        return true;
-        //validar o return dele
+        if(dadosDeTelefone.add(new Telefone(rotulo, numero))){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    //valida email é aqui ou dentro de email?
     public boolean addEmail(String rotulo, String email){
-        dadosDeEmail.add(new Email(rotulo, email));
-        return true;
-        //validar o return dele
+        if(dadosDeEmail.add(new Email(rotulo, email))){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     public boolean updateTelefone(String rotulo, String numero){
