@@ -10,8 +10,7 @@ public class AgendaTelefonica {
     }
 
     public boolean addContato(Contato contato) {
-        contatos.add(contato);
-        return true;
+        if(contatos.add(contato)){return true;} else{return false;}
     }
 
     public boolean removeContato(String nome, String sobrenome) {
@@ -24,8 +23,13 @@ public class AgendaTelefonica {
         return false;
     }
 
+    //TODO
     public boolean addTelefone(String rotulo, String nome, Contato contato) {
+        for (Contato c : contatos) {
+            if(c.getNome().contains(nome)){
 
+            }
+        }
         return true;
     }
 
@@ -48,5 +52,4 @@ public class AgendaTelefonica {
     public boolean removeEmail(String rotulo, Contato contato){
         return true;
     }
-
 }
