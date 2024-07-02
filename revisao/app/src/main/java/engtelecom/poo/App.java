@@ -7,14 +7,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class App {
-    private ArrayList<Tarefa> tarefa = new ArrayList<>();
+    private ArrayList<Tarefa> tarefas = new ArrayList<>();
 
     public static void main(String[] args) {
         App app = new App();
 
-        app.tarefa.add(new Tarefa("AtividadePOO", LocalDate.of(2024,7,1)));
-
-        //for each aqui
-
-    }
+        app.tarefas.add(new Tarefa("AtividadePOO", LocalDate.of(2024,7,1)));
+        app.tarefas.forEach(tarefa -> System.out.println(tarefa));    }
 }
