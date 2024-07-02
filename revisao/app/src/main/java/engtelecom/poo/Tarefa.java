@@ -16,6 +16,8 @@ public class Tarefa {
         this.responsaveis = new ArrayList<>();
     }
 
+    //TODO como eu faria uma sobrecarga de construtor aqui para aceitar mais parametros
+
     @Override
     public String toString() {
         return "Tarefa{" +
