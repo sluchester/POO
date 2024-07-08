@@ -61,7 +61,7 @@
 											"font": "Arial;13;1",
 											"left": 149,
 											"top": 119,
-											"width": 200.5732421875,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "Aviao"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 144,
 									"top": 112,
-									"width": 210.5732421875,
+									"width": 217.7333984375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQMmizi77Q13Q="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 149,
 											"top": 142,
-											"width": 200.5732421875,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "-motor: Motor",
 											"horizontalAlignment": 0
@@ -150,7 +150,7 @@
 											"font": "Arial;13;0",
 											"left": 149,
 											"top": 157,
-											"width": 200.5732421875,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "-peso: double",
 											"horizontalAlignment": 0
@@ -167,7 +167,7 @@
 											"font": "Arial;13;0",
 											"left": 149,
 											"top": 172,
-											"width": 200.5732421875,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "-numMaxTripulantes: int",
 											"horizontalAlignment": 0
@@ -184,34 +184,17 @@
 											"font": "Arial;13;0",
 											"left": 149,
 											"top": 187,
-											"width": 200.5732421875,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "-numMaxPassageiros: int",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGQMmx7QcHw9ko=",
-											"_parent": {
-												"$ref": "AAAAAAGQMmizjL7UWYs="
-											},
-											"model": {
-												"$ref": "AAAAAAGQMmx7M8Htpg8="
-											},
-											"font": "Arial;13;0",
-											"left": 149,
-											"top": 202,
-											"width": 200.5732421875,
-											"height": 13,
-											"text": "-manche: Motor {Tag1=null}",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 144,
 									"top": 137,
-									"width": 210.5732421875,
-									"height": 83
+									"width": 217.7333984375,
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -234,8 +217,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 149,
-											"top": 225,
-											"width": 200.5732421875,
+											"top": 210,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "+aumentarVelocidade(): int",
 											"horizontalAlignment": 0
@@ -251,8 +234,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 149,
-											"top": 240,
-											"width": 200.5732421875,
+											"top": 225,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "+diminuirVelocidade(): int",
 											"horizontalAlignment": 0
@@ -268,8 +251,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 149,
-											"top": 255,
-											"width": 200.5732421875,
+											"top": 240,
+											"width": 207.7333984375,
 											"height": 13,
 											"text": "+button(): bool",
 											"horizontalAlignment": 0
@@ -285,17 +268,17 @@
 											},
 											"font": "Arial;13;0",
 											"left": 149,
-											"top": 270,
-											"width": 200.5732421875,
+											"top": 255,
+											"width": 207.7333984375,
 											"height": 13,
-											"text": "+direcao(): String",
+											"text": "+direcao(String direcao, int i): String",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 144,
-									"top": 220,
-									"width": 210.5732421875,
+									"top": 205,
+									"width": 217.7333984375,
 									"height": 68
 								},
 								{
@@ -335,7 +318,7 @@
 							"containerChangeable": true,
 							"left": 144,
 							"top": 112,
-							"width": 210.5732421875,
+							"width": 217.7333984375,
 							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQMmizir7PBEI="
@@ -633,8 +616,8 @@
 										"$ref": "AAAAAAGQMmnt6r8lNXM="
 									},
 									"font": "Arial;13;0",
-									"left": 402,
-									"top": 194,
+									"left": 405,
+									"top": 195,
 									"width": 32.88720703125,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -656,8 +639,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 419,
-									"top": 209,
+									"left": 422,
+									"top": 210,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -677,8 +660,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 415,
-									"top": 165,
+									"left": 418,
+									"top": 166,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -699,7 +682,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 454,
-									"top": 192,
+									"top": 193,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -720,7 +703,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 452,
-									"top": 206,
+									"top": 207,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -741,7 +724,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 456,
-									"top": 165,
+									"top": 166,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -761,7 +744,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 381,
+									"left": 388,
 									"top": 198,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -781,7 +764,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 385,
+									"left": 392,
 									"top": 211,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -801,8 +784,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 375,
-									"top": 170,
+									"left": 382,
+									"top": 171,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -847,7 +830,7 @@
 								"$ref": "AAAAAAGQMmmBwL77PwI="
 							},
 							"lineStyle": 1,
-							"points": "479:182;355:191",
+							"points": "479:183;362:191",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGQMmnt678qRZs="
@@ -935,30 +918,6 @@
 							"name": "numMaxPassageiros",
 							"visibility": "private",
 							"type": "int"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGQMmx7M8Htpg8=",
-							"_parent": {
-								"$ref": "AAAAAAGQMmizhb7MEG4="
-							},
-							"name": "manche",
-							"tags": [
-								{
-									"_type": "Tag",
-									"_id": "AAAAAAGQMnJ1fMQMvV0=",
-									"_parent": {
-										"$ref": "AAAAAAGQMmx7M8Htpg8="
-									},
-									"name": "Tag1",
-									"kind": "reference",
-									"value": "O manche provoca um aumento na potência do motor, o motor provoca um aumento da velocidade total do avião. Logo, na implementação, ao se puxar o manche deve-se adicionar um aumento da velocidade do sistema total."
-								}
-							],
-							"visibility": "private",
-							"type": {
-								"$ref": "AAAAAAGQMmmBv7755sk="
-							}
 						}
 					],
 					"operations": [
@@ -1035,6 +994,24 @@
 									},
 									"type": "String",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGQdb4HN33cV3w=",
+									"_parent": {
+										"$ref": "AAAAAAGQMpW/4cmtsdw="
+									},
+									"name": "String direcao",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGQdb4HOH3da9A=",
+									"_parent": {
+										"$ref": "AAAAAAGQMpW/4cmtsdw="
+									},
+									"name": "int i",
+									"type": ""
 								}
 							]
 						}
