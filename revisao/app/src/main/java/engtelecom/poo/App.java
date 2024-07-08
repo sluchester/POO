@@ -12,6 +12,7 @@ public class App {
     public static void main(String[] args) {
         App app = new App();
 
-        app.tarefas.add(new Tarefa("AtividadePOO", LocalDate.of(2024,7,1)));
-        app.tarefas.forEach(tarefa -> System.out.println(tarefa));    }
+        app.tarefas.add(new Tarefa("AtividadePOO", LocalDate.of(2024, 7, 1)));
+        app.tarefas.forEach(tarefa -> System.out.println(tarefa));
+    }
 }
