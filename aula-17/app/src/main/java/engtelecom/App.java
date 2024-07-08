@@ -3,7 +3,19 @@
  */
 package engtelecom;
 
+/**
+ * Aula de JavaDOC
+ */
 public class App {
+
+    public App(){
+
+    }
+
+    /**
+     *
+     * @param args argumentos de linha de comando
+     */
     public static void main(String[] args) {
         /*
         1- Documentação de código com JavaDOC
