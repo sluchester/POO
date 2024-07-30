@@ -10,6 +10,15 @@ package engtelecom;
  */
 public class Carro {
     private int velocidadeAtual;
+    private static final int VELOCIDADE_MAXIMA = 120;
+    private static final int VELOCIDADE_MINIMA = 0;
+
+    /**
+     * Cria um carro com velocidade 0
+     */
+    public Carro() {
+        this.velocidadeAtual = 0;
+    }
 
     /**
      * Incrementa a velocidade do carro de acordo com o parâmetro fornecido
@@ -17,7 +26,13 @@ public class Carro {
      * @return  nova velocidade do carro
      */
     public int acelerar(int i){
-        this.velocidadeAtual = velocidadeAtual + i;
+        if(i >= VELOCIDADE_MINIMA){
+            if(velocidadeAtual+i >= VELOCIDADE_MAXIMA){
+                this.velocidadeAtual = VELOCIDADE_MAXIMA;
+            }else{
+                this.velocidadeAtual = velocidadeAtual + i;
+            }
+        }
         return this.velocidadeAtual;
     }
 
@@ -27,7 +42,17 @@ public class Carro {
      * @return nova velocidade menor que a anterior
      */
     public int frear(int i){
-        this.velocidadeAtual = velocidadeAtual - i;
+        if(i >= VELOCIDADE_MINIMA){
+            if(velocidadeAtual-i <= VELOCIDADE_MINIMA){
+                this.velocidadeAtual = VELOCIDADE_MINIMA;
+            } else{
+                this.velocidadeAtual = velocidadeAtual - i;
+            }
+        }
         return this.velocidadeAtual;
+    }
+
+    public int getVelocidadeAtual() {
+        return velocidadeAtual;
     }
 }
