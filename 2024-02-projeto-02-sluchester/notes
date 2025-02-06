@@ -1,0 +1,30 @@
+dispositivo x rede
+
+Dispositivo
+-endereco MAC
+-endereço IP
+
+Pacote IP:
+-end Ip Origem
+-porta de origem
+-end ip destino
+-porta de destino: 
+-endereço MAC destino : String
+-payload: String
+
+Comutador (deve encaminhar o pacote para o dispositivo correto):
+-tabela de endereços MAC e portas associadas (12) 
+-caso o endereço MAC de destino não seja conhecido, o pacote deve ser encaminhado para todas as portas, exceto a porta de origem
+
+
+Roteador (deve encaminhar o pacote para a rede correta ou descartá-lo caso a rede de destino não seja conhecida)
+- tabela de rotas com as redes conhecidas e a porta de saída associada
+-
+
+Firewall (deve processar o pacote de acordo com as regras de filtragem)
+-possui regras
+-
+
+Interface
+-quando varias classes implementam um mesmo método.
+-ex: os 3 dispositivos podem implementar um método "verificaPacote". Então se cria uma interface para fazer isso.
